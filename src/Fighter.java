@@ -18,7 +18,7 @@ public class Fighter {
             this.dodge = 0;
         }
     }
-    int hit(@org.jetbrains.annotations.NotNull Fighter foe){
+    int hit(Fighter foe){
 
         if (foe.isDodge())
         {
@@ -32,10 +32,11 @@ public class Fighter {
         {
             return 0;
         }
-        return foe.health- this.damage;
+        return foe.health - this.damage;
     }
-   public boolean isDodge(){
-        double randomNumber = Math.random() *100;
-        return randomNumber <= this.dodge;
-    }
+   public boolean isDodge() {
+       double randomNumber = Math.random() * 100;
+       return randomNumber <= this.dodge;
+   }
+
 }
