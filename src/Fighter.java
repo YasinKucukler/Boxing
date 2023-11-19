@@ -3,9 +3,9 @@ public class Fighter {
     int damage;
     int health;
     int weight;
-    int dodge;
+    double dodge;
 
-    Fighter(String name, int damage, int health, int weight, int dodge)
+    public Fighter(String name, int damage, int health, int weight, double dodge)
     {
         this.name= name;
         this.damage = damage;
@@ -20,7 +20,7 @@ public class Fighter {
     }
     int hit(@org.jetbrains.annotations.NotNull Fighter foe){
 
-        if (isDodge())
+        if (foe.isDodge())
         {
             System.out.println(foe.name + " gelen hasarı blokladı!!");
             return foe.health;
@@ -34,8 +34,7 @@ public class Fighter {
         }
         return foe.health- this.damage;
     }
-    
-    boolean isDodge(){
+   public boolean isDodge(){
         double randomNumber = Math.random() *100;
         return randomNumber <= this.dodge;
     }
