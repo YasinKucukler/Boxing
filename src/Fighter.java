@@ -31,8 +31,6 @@ public class Fighter {
             return foe.health= 0;
         }
         return foe.health - this.damage;
-//        int remainingHealth = foe.health - this.damage;
-//        return (remainingHealth > 0) ? remainingHealth : 0;
     }
    public boolean isDodge() {
        double randomNumber = Math.random() * 100;
