@@ -14,8 +14,8 @@ public class Match {
 
      public void run()
      {
-         Fighter firstAttack = whoStart();
          if (isCheck()){
+             Fighter firstAttack = whoStart();
          while(this.f1.health > 0 && this.f2.health > 0)
          {
               System.out.println("-------------YENİ RAUND-------------");
@@ -23,10 +23,12 @@ public class Match {
                     this.f2.health = this.f1.hit(this.f2);
                     if (isWin()) break;
                     this.f1.health = this.f2.hit(this.f1);
+                    if (isWin()) break;
               }else {
                     this.f1.health = this.f2.hit(this.f1);
                     if (isWin()) break;
-                   this.f2.health = this.f1.hit(this.f2);
+                    this.f2.health = this.f1.hit(this.f2);
+                    if (isWin()) break;
               }
               System.out.println(this.f1.name + " Sağlık : " + this.f1.health);
               System.out.println(this.f2.name + " Sağlık : " + this.f2.health);
@@ -44,7 +46,7 @@ public class Match {
      }
 
      boolean isWin(){
-         if(this.f1.health == 0 )
+         if(this.f1.health == 0)
          {
               printWinner(f2.name);
               return true;
@@ -56,8 +58,8 @@ public class Match {
          }
          return false;
     }
-    public void printWinner(String figterName){
-        System.out.println(figterName + " karşılaşmayı kazandı!!");
+    public void printWinner(String fighterName){
+        System.out.println(fighterName + " karşılaşmayı kazandı!!");
     }
     
     private Fighter whoStart()
